@@ -1,11 +1,14 @@
 package googletranslate;
-
 import java.util.ArrayList;
 import java.util.List;
 
 public class Config
 {
+// Memasukan String atau kalimat yang ingin ditranslate ke ArrayList
+	// Dimana variabel languages di java terhubung dengan xml config yang didalamnya languages 
+	// languages sudah ada seperti english arab dll.
   public List<String> languages = new ArrayList();
+  // Membuat variable 
   public String font;
 }
 
