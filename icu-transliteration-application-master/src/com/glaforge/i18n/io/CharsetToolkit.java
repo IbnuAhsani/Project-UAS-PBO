@@ -28,10 +28,20 @@ import java.util.SortedMap;
 
 public class CharsetToolkit
 {
+  /**
+   * buffer : menyimpan data sementara dalam bentuk byte array
+   * defaultCharset : membuat sesautu variable defaultCharset bertipe Charset
+   * enforce8Bit : 
+   */
   private byte[] buffer;
   private Charset defaultCharset;
   private boolean enforce8Bit = false;
   
+  /**
+   * [CharsetToolkit description]
+   * @param  paramArrayOfByte [description]
+   * @return                  [description]
+   */
   public CharsetToolkit(byte[] paramArrayOfByte)
   {
     this.buffer = paramArrayOfByte;
