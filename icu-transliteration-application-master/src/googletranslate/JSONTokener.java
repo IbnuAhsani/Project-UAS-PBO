@@ -1,5 +1,11 @@
 package googletranslate;
 
+/**
+ * package BufferedReader: digunakan untuk membaca karakter dari inputan berupa teks
+ * package IOException: digunakan untuk mengantisipasi terjadinya IOException
+ * package Reader: abstract class yang digunakan untuk membaca character streams
+ * package StringReader: suatu character stream dimana sumbernya adalah sebuah sting
+ */
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -7,6 +13,12 @@ import java.io.StringReader;
 
 public class JSONTokener
 {
+  /**
+   * variabel index:
+   * variabel reader:
+   * variabel lastChar:
+   * variabel useLastChar:
+   */
   private int index;
   private Reader reader;
   private char lastChar;
