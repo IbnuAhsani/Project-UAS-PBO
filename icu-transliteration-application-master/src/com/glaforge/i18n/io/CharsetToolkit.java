@@ -26,7 +26,9 @@ import java.util.SortedMap;
 
 public class CharsetToolkit
 {
+  // Untuk menampung data sementara yang tipe array
   private byte[] buffer;
+  // dengan tipedata Charset 
   private Charset defaultCharset;
   private boolean enforce8Bit = false;
   
