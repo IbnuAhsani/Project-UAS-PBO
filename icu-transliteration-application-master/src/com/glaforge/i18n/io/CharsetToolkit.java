@@ -8,7 +8,9 @@ package com.glaforge.i18n.io;
  * import class InputSteramReader: digunakan untuk membaca data berupa byte dan mendecodenya menjadi karakter berdasakan
  *                                 class CharSet yang digunakan
  * import class PrintStream     : adalah class yang menyediakan method untuk menulis data ke urutan data dan mencetak
- *                                 berbagai nilai representasi dari berbagai sumber                                 
+ *                                 berbagai nilai representasi dari berbagai sumber
+ * import class CharSet         : class yang digunakan sebagai referensi dari data yang akan diubah, berisi set dari 
+ *                                 karakter yang dapat digunakan untuk decoing dan encoding                                                                                                  
  * import class IOException     : digunakan untuk mengantisipasi terjadinya IOException
  * import class Reader          : abstract class yang digunakan untuk membaca character streams
  * import class StringReader    : suatu character stream dimana sumbernya adalah sebuah sting
