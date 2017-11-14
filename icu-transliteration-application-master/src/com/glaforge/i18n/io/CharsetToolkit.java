@@ -1,5 +1,15 @@
 package com.glaforge.i18n.io;
 
+/**
+ * import class BufferedReader  : digunakan untuk membaca karakter dari inputan berupa teks
+ * import class File            : digunakan untuk memrepresentasikan pathname dari file dan direktori dalam bentuk abstrak
+ *                                Class ini digunakan untuk membuat, mencari dan menghapus file atau direktori
+ * import class FileInputStream : digunakan untuk membaca data dalam bentuk byte dari file gambar, video atau audio
+ *                                  
+ * import class IOException     : digunakan untuk mengantisipasi terjadinya IOException
+ * import class Reader          : abstract class yang digunakan untuk membaca character streams
+ * import class StringReader    : suatu character stream dimana sumbernya adalah sebuah sting
+ */
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
