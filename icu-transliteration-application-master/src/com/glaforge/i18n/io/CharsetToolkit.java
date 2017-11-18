@@ -28,12 +28,18 @@ import java.util.SortedMap;
 
 public class CharsetToolkit
 {
+<<<<<<< HEAD
+  // Untuk menampung data sementara yang tipe array
+||||||| merged common ancestors
+=======
   /**
    * buffer : menyimpan data sementara dalam bentuk byte array
    * defaultCharset : membuat sesautu variable defaultCharset bertipe Charset
    * enforce8Bit : 
    */
+>>>>>>> a13ac50dab520ff62200c57ba5b73a142b95fff7
   private byte[] buffer;
+  // dengan tipedata Charset 
   private Charset defaultCharset;
   private boolean enforce8Bit = false;
   
