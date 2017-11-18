@@ -12,7 +12,13 @@ import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JFileChooser;
 import javax.swing.filechooser.FileNameExtensionFilter;
-
+import java.util.List; 
+import java.util.ArrayList; 
+import org.opencv.core.*; 
+import org.opencv.imgcodecs.Imgcodecs; 
+import org.opencv.imgproc.Imgproc; 
+import static org.opencv.imgproc.Imgproc.MORPH_RECT; 
+import static org.opencv.imgproc.Imgproc.getStructuringElement;
 /**
  *
  * @author ASUS PC
@@ -34,7 +40,6 @@ public class CiburuyForm extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -229,6 +234,28 @@ public class CiburuyForm extends javax.swing.JFrame {
             String path = selectedFile.getAbsolutePath();
             jLabel2.setIcon(ResizeImage(path));
             //if the user click on save in Jfilechooser
+//            Mengubah Gambar menjadi HitamPutih
+            int CV_THRESH_OTSU = 8; 
+            int CV_THRESH_BINARY = 0; 
+            int CV_ADAPTIVE_THRESH_GAUSSIAN_C  = 1; 
+            int CV_ADAPTIVE_THRESH_MEAN_C = 0; 
+            int CV_THRESH_BINARY_INV  = 1; 
+            System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+            Mat img = new Mat(); 
+            img = Imgcodecs.imread(path);  
+            Imgcodecs.imwrite("result/result_a.png", img); 
+             
+            Mat imgGray = new Mat(); 
+            Imgproc.cvtColor(img, imgGray, Imgproc.COLOR_BGR2GRAY); 
+            Imgcodecs.imwrite("result/Gray_a.png", imgGray); 
+             
+            Mat imgGaussianBlur = new Mat();  
+            Imgproc.GaussianBlur(imgGray,imgGaussianBlur,new Size(3, 3),0); 
+            Imgcodecs.imwrite("result/gaussian_blur_a.png", imgGaussianBlur); 
+             
+            Mat imgAdaptiveThreshold = new Mat(); 
+            Imgproc.adaptiveThreshold(imgGaussianBlur, imgAdaptiveThreshold, 255, CV_ADAPTIVE_THRESH_MEAN_C ,CV_THRESH_BINARY, 99, 4); 
+            Imgcodecs.imwrite("result/adaptive_threshold_a.png", imgAdaptiveThreshold);
         }
         else if(result == JFileChooser.CANCEL_OPTION){
             System.out.println("No File Select");
@@ -246,6 +273,7 @@ public class CiburuyForm extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
+    
     // Methode to resize imageIcon with the same size of a Jlabel
     public ImageIcon ResizeImage(String ImagePath)
     {
@@ -264,6 +292,7 @@ public class CiburuyForm extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+    	
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -307,4 +336,6 @@ public class CiburuyForm extends javax.swing.JFrame {
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JTextArea jTextArea2;
     // End of variables declaration//GEN-END:variables
+    
+    
 }
