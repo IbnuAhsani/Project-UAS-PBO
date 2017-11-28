@@ -303,15 +303,15 @@ public class CiburuyDesk extends javax.swing.JFrame {
             instance.setDatapath("E:\\OOP\\CiburuyDesk\\tessdata");
             try {
                 String resultTes = instance.doOCR(imageFile);
-                char[] abcCyr = {'A','I','U','E','O','(',')','b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z','G','J','S','K'};
-                String[] abcLat = {"a","i","u","e","o","E","eu","ba","ca","da","fa","ga","ha","ja","ka","la","ma","na","pa","qa","ra","sa","ta","va","wa","xa","ya","za","nga","nya","sya","kha"};
+                char[] aksara = {'A','I','U','E','O','(',')','b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z','G','J','S','K','i','u','e','o','[',']'};
+                String[] abjad = {"a","i","u","e","o","E","eu","ba","ca","da","fa","ga","ha","ja","ka","la","ma","na","pa","qa","ra","sa","ta","va","wa","xa","ya","za","nga","nya","sya","kha","i","u","e","o","E","eu"};
 
                 StringBuilder builder = new StringBuilder();
 
                 for (int i = 0; i < resultTes.length(); i++) {
-                    for(int x = 0; x < abcCyr.length; x++ )
-                    if (resultTes.charAt(i) == abcCyr[x]) {
-                        builder.append(abcLat[x]);
+                    for(int x = 0; x < aksara.length; x++ )
+                    if (resultTes.charAt(i) == aksara[x]) {
+                        builder.append(abjad[x]);
                     }
                 }
                 System.out.println(builder);
