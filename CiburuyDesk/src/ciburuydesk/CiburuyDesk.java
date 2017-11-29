@@ -32,10 +32,13 @@ public class CiburuyDesk extends javax.swing.JFrame {
     /**
      * Creates new form CiburuyDesk
      */
+
+    
     public CiburuyDesk() {
         initComponents();
         
         imageLabel.setIcon(ResizeImage("imgFolder/UploadImage.png"));
+
     }
 //    Global Variables
     File imageFile;
@@ -63,9 +66,12 @@ public class CiburuyDesk extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         sliderThreshold = new javax.swing.JSlider();
         jLabel5 = new javax.swing.JLabel();
+        checkImage = new javax.swing.JCheckBox();
         jPanel4 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -120,6 +126,8 @@ public class CiburuyDesk extends javax.swing.JFrame {
         jLabel5.setLabelFor(sliderThreshold);
         jLabel5.setText("Silder Threshold");
 
+        checkImage.setText("<html>Apakah Gambar <br>Sudah Bersih?</html>");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -141,7 +149,7 @@ public class CiburuyDesk extends javax.swing.JFrame {
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(SliderDilate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 121, Short.MAX_VALUE)
                                 .addComponent(sliderThreshold, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                                 .addComponent(GambarVisualisasi, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -149,7 +157,9 @@ public class CiburuyDesk extends javax.swing.JFrame {
                                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(223, 223, 223)
-                        .addComponent(runButton)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(checkImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(runButton))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -163,10 +173,12 @@ public class CiburuyDesk extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 121, Short.MAX_VALUE)
                     .addComponent(GambarVisualisasi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addComponent(checkImage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(SliderDilate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -204,25 +216,40 @@ public class CiburuyDesk extends javax.swing.JFrame {
         jLabel1.setToolTipText("");
 
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("<html>Threshold digunakan untuk menemukan <br>kontras antar warna yang ada pada<br>gambar yang akan diproses</html>");
+        jLabel6.setText("<html>Threshold digunakan<br>untuk menemukan <br>kontras antar warna<br>yang ada pada gambar<br>yang akan diproses</html>");
+        jLabel6.setToolTipText("");
+
+        jLabel7.setText("<html>Gambar dapat dikatan bersih jika<br>background putih polos dan<br>aksara sunda dapat dibaca</html>");
+
+        jLabel8.setFont(new java.awt.Font("Dialog", 2, 12)); // NOI18N
+        jLabel8.setText("*Catatan Developer");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 218, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap()
+                .addComponent(jLabel8)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addComponent(jLabel8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -243,7 +270,7 @@ public class CiburuyDesk extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(38, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -279,58 +306,100 @@ public class CiburuyDesk extends javax.swing.JFrame {
         int CV_ADAPTIVE_THRESH_MEAN_C = 0;
         int CV_THRESH_BINARY_INV = 1;
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
-        Mat img = new Mat();
-        img = Imgcodecs.imread(path);
-        Imgcodecs.imwrite("result/result_a.jpg", img);
-
-        Mat imgGray = new Mat();
-        Imgproc.cvtColor(img, imgGray, Imgproc.COLOR_BGR2GRAY);
-        Imgcodecs.imwrite("result/Gray_a.jpg", imgGray);
-
-          Mat imgGaussianBlur = new Mat();
-        Imgproc.GaussianBlur(imgGray, imgGaussianBlur, new Size(85, 85), 0);
-        Imgcodecs.imwrite("result/gaussian_blur_a.jpg", imgGaussianBlur);
-        int valueThreshold = sliderThreshold.getValue();
-        Mat imgAdaptiveThreshold = new Mat();
-        Imgproc.adaptiveThreshold(imgGaussianBlur, imgAdaptiveThreshold, 255, CV_ADAPTIVE_THRESH_MEAN_C, CV_THRESH_BINARY, 99, valueThreshold);
-        Imgcodecs.imwrite("result/adaptive_threshold_a.jpg", imgAdaptiveThreshold);
-        
-//        Memberi nilai pada Dilate
-        int sliderValue = SliderDilate.getValue();
-        Mat imgDilate = imgAdaptiveThreshold.clone();
-        Imgproc.dilate(imgDilate, imgDilate, new Mat(), new Point(-1, -1), sliderValue); // 1 
-        Imgcodecs.imwrite("result/dilate_comb.jpg", imgDilate);
-//        Tess4J, membaca karakter dari gambar yang sudah dibersihkan
-//            Tess4J2
-            imageFile = new File("result/dilate_comb.jpg"); //result nanti diganti dengan adaptive_threshold_a.png 
-         ITesseract instance = new Tesseract();  // JNA Interface Mapping
+        if (checkImage.isSelected()) {
+            System.out.println("Check Box Is Selected");
+            //            Tess4J2
+            imageFile = new File(path); //result nanti diganti dengan adaptive_threshold_a.png 
+            ITesseract instance = new Tesseract();  // JNA Interface Mapping
             // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
             instance.setLanguage("sun");
             instance.setDatapath(".\\tessdata");
             try {
                 String resultTes = instance.doOCR(imageFile);
-                char[] aksara = {'A','I','U','E','O','(',')','b','c','d','f','g','h','j','k','l','m','n','p','q','r','s','t','v','w','x','y','z','G','J','S','K','i','u','e','o','[',']'};
-                String[] abjad = {"a","i","u","e","o","E","eu","ba","ca","da","fa","ga","ha","ja","ka","la","ma","na","pa","qa","ra","sa","ta","va","wa","xa","ya","za","nga","nya","sya","kha","i","u","e","o","E","eu"};
+                char[] aksara = {'A', 'I', 'U', 'E', 'O', '(', ')', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z', 'G', 'J', 'S', 'K', 'i', 'u', 'e', 'o', '[', ']'};
+                String[] abjad = {"a", "i", "u", "e", "o", "E", "eu", "ba", "ca", "da", "fa", "ga", "ha", "ja", "ka", "la", "ma", "na", "pa", "qa", "ra", "sa", "ta", "va", "wa", "xa", "ya", "za", "nga", "nya", "sya", "kha", "i", "u", "e", "o", "E", "eu"};
 
                 StringBuilder builder = new StringBuilder();
 
                 for (int i = 0; i < resultTes.length(); i++) {
-                    for(int x = 0; x < aksara.length; x++ )
-                    if (resultTes.charAt(i) == aksara[x]) {
-                        builder.append(abjad[x]);
+                    for (int x = 0; x < aksara.length; x++) {
+                        if (resultTes.charAt(i) == aksara[x]) {
+                            builder.append(abjad[x]);
+                        }
                     }
                 }
                 System.out.println(builder);
-                
+
                 TransliterasiText.setText(builder.toString());
                 System.out.println(resultTes);
-                System.out.println(sliderValue);
-                System.out.println(valueThreshold);
             } catch (TesseractException e) {
                 System.err.println(e.getMessage());
             }
 //            Memvisualisasikan Image
-//           GambarVisualisasi.setIcon(ResizeImage("result/dilate_comb.jpg"));
+//          Read the picture as a BufferedImage
+            BufferedImage imgVis = null;
+            try {
+                imgVis = ImageIO.read(new File(path));
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+//            Resize the BufferedImage
+
+            Image dimg = imgVis.getScaledInstance(GambarVisualisasi.getWidth(), GambarVisualisasi.getHeight(),Image.SCALE_SMOOTH);
+            ImageIcon imageIcon = new ImageIcon(dimg);
+            GambarVisualisasi.setIcon(imageIcon);
+        }else{
+            System.out.println("Check Box Is Not Selected");
+            Mat img = new Mat();
+            img = Imgcodecs.imread(path);
+            Imgcodecs.imwrite("result/result_a.jpg", img);
+
+            Mat imgGray = new Mat();
+            Imgproc.cvtColor(img, imgGray, Imgproc.COLOR_BGR2GRAY);
+            Imgcodecs.imwrite("result/Gray_a.jpg", imgGray);
+
+            Mat imgGaussianBlur = new Mat();
+            Imgproc.GaussianBlur(imgGray, imgGaussianBlur, new Size(85, 85), 0);
+            Imgcodecs.imwrite("result/gaussian_blur_a.jpg", imgGaussianBlur);
+
+            int valueThreshold = sliderThreshold.getValue();
+            Mat imgAdaptiveThreshold = new Mat();
+            Imgproc.adaptiveThreshold(imgGaussianBlur, imgAdaptiveThreshold, 255, CV_ADAPTIVE_THRESH_MEAN_C, CV_THRESH_BINARY, 99, valueThreshold);
+            Imgcodecs.imwrite("result/adaptive_threshold_a.jpg", imgAdaptiveThreshold);
+
+//        Memberi nilai pada Dilate
+            int sliderValue = SliderDilate.getValue();
+            Mat imgDilate = imgAdaptiveThreshold.clone();
+            Imgproc.dilate(imgDilate, imgDilate, new Mat(), new Point(-1, -1), sliderValue); // 1 
+            Imgcodecs.imwrite("result/dilate_comb.jpg", imgDilate);
+//        Tess4J, membaca karakter dari gambar yang sudah dibersihkan
+//            Tess4J2
+            imageFile = new File("result/dilate_comb.jpg"); //result nanti diganti dengan adaptive_threshold_a.png 
+            ITesseract instance = new Tesseract();  // JNA Interface Mapping
+            // ITesseract instance = new Tesseract1(); // JNA Direct Mapping
+            instance.setLanguage("sun");
+            instance.setDatapath(".\\tessdata");
+            try {
+                String resultTes = instance.doOCR(imageFile);
+                char[] aksara = {'A', 'I', 'U', 'E', 'O', '(', ')', 'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 'w', 'x', 'y', 'z', 'G', 'J', 'S', 'K', 'i', 'u', 'e', 'o', '[', ']'};
+                String[] abjad = {"a", "i", "u", "e", "o", "E", "eu", "ba", "ca", "da", "fa", "ga", "ha", "ja", "ka", "la", "ma", "na", "pa", "qa", "ra", "sa", "ta", "va", "wa", "xa", "ya", "za", "nga", "nya", "sya", "kha", "i", "u", "e", "o", "E", "eu"};
+
+                StringBuilder builder = new StringBuilder();
+
+                for (int i = 0; i < resultTes.length(); i++) {
+                    for (int x = 0; x < aksara.length; x++) {
+                        if (resultTes.charAt(i) == aksara[x]) {
+                            builder.append(abjad[x]);
+                        }
+                    }
+                }
+                System.out.println(builder);
+
+                TransliterasiText.setText(builder.toString());
+                System.out.println(resultTes);
+                System.out.println(sliderValue);
+                System.out.println(valueThreshold);
+                //            Memvisualisasikan Image
 //          Read the picture as a BufferedImage
             BufferedImage imgVis = null;
             try {
@@ -343,7 +412,10 @@ public class CiburuyDesk extends javax.swing.JFrame {
             Image dimg = imgVis.getScaledInstance(GambarVisualisasi.getWidth(), GambarVisualisasi.getHeight(),Image.SCALE_SMOOTH);
             ImageIcon imageIcon = new ImageIcon(dimg);
             GambarVisualisasi.setIcon(imageIcon);
-
+            } catch (TesseractException e) {
+                System.err.println(e.getMessage());
+            }
+        }
     }//GEN-LAST:event_runButtonActionPerformed
     public ImageIcon ResizeImage(String ImagePath) {
         ImageIcon MyImage = new ImageIcon(ImagePath);
@@ -392,6 +464,7 @@ public class CiburuyDesk extends javax.swing.JFrame {
     private javax.swing.JLabel GambarVisualisasi;
     private javax.swing.JSlider SliderDilate;
     private javax.swing.JTextArea TransliterasiText;
+    private javax.swing.JCheckBox checkImage;
     private javax.swing.JLabel imageLabel;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -399,6 +472,8 @@ public class CiburuyDesk extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel4;
